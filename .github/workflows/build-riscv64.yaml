@@ -1,4 +1,4 @@
-name: Build Binary with Nuitka (RISC-V)
+name: Build Binary with Nuitka (riscv64)
 
 on:
   push:

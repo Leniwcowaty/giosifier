@@ -21,8 +21,8 @@ If you want to read the code and execute actual .py file
 ### "Single binary" installation
 If you want to just execute the binary without the need to install dependencies or python
 1. Download [latest release](https://github.com/Leniwcowaty/giosifier/releases)
-2. Place it somewhere on your system (preferably where you've added it to the $PATH)
-3. Run the `giosifier` binary
+2. Extract to some directory (eg. /opt/giosifier-[arch])
+3. Run the `giosifier` binary or link it to somewhere in the $PATH (eg. /usr/local/bin/)
 
 *The binary is built with Nuitka. Python 3.14.3 was used for amd64, riscv64, and armv7.*
 
