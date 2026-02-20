@@ -4,6 +4,11 @@ except ModuleNotFoundError:
     print("Module sys is not installed")
 
 try:
+    import os
+except ModuleNotFoundError:
+    print("Module os is not installed")
+
+try:
     import requests as r
 except ModuleNotFoundError:
     print("Module requests is not installed")
@@ -21,8 +26,12 @@ except ModuleNotFoundError:
 endpointUrl = "https://api.gios.gov.pl/pjp-api/v1/rest/data/getData/"
 
 def read_config():
-    with open('config.yaml', 'r') as configFile:
-        config = yaml.safe_load(configFile)
+    configPath = os.path.expanduser('~/.config/giosifier/config.yaml')
+    try:
+        with open(configPath, 'r') as configFile:
+            config = yaml.safe_load(configFile)
+    except FileNotFoundError:
+        sys.exit(f"Config file not found in {configPath}")
 
     pm10Config = {"name": "Pył PM10", "id": config["pm10"]["sensor_id"], "alert": config["pm10"]["alert"]}
     no2Config = {"name": "Pył PM10", "id": config["no2"]["sensor_id"], "alert": config["no2"]["alert"]}
