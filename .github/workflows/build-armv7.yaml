@@ -26,13 +26,14 @@ jobs:
           apt-get update && apt-get install -y build-essential libffi-dev libzstd-dev gcc patchelf &&\
           pip install nuitka requests pyyaml pyjson zstandard setuptools && \
           python3 -m nuitka \
-          --onefile \
           --standalone \
-          --output-filename=giosifier-armv7 \
+          --output-filename=giosifier \
           main.py"
+          mv main.dist giosifier-armv7
+          tar -czf giosifier-armv7.tar.gz giosifier-armv7/
         
       - name: Push binary
         uses: actions/upload-artifact@v4
         with:
-          name: giosifier-armv7
-          path: giosifier-armv7
+          name: giosifier-armv7-release
+          path: giosifier-armv7.tar.gz
