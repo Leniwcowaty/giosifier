@@ -1,0 +1,21 @@
+# Sensor station config
+# To get sensor id find your "Identyfikator stacji" via GIOS API first, eg. curl -X GET https://api.gios.gov.pl/pjp-api/v1/rest/station/findAll?page=0&size=250
+# Then for sensor_id look for "Identyfikator stanowiska" via GIOS API, eg. curl -X GET https://api.gios.gov.pl/pjp-api/v1/rest/station/sensors/{"Identyfikator stacji"}
+#
+# Default alerts taken from: https://powietrze.gios.gov.pl/pjp/content/annual_assessment_air_acceptable_level
+pm10:
+  sensor_id: ""
+  alert: 40
+
+no2:
+  sensor_id: ""
+  alert: 200
+
+# ntfy config
+# You can use public or custom ntfy server
+# If you use basic Token authentication, uncomment auth and provide your auth method
+# Eg. for basic auth token it would be:
+#   auth: "Basic [token]"
+ntfy:
+  url: "https://ntfy.sh/mytopic"
+  #auth: ""
