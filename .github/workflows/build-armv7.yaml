@@ -28,7 +28,6 @@ jobs:
           python3 -m nuitka \
           --standalone \
           --output-filename=giosifier \
-
           main.py"
           mv main.dist giosifier-armv7
           tar -czf giosifier-armv7.tar.gz giosifier-armv7/
