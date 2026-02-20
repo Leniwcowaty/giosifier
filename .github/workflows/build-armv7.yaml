@@ -1,4 +1,4 @@
-name: Build Binary with Nuitka (x86_64)
+name: Build Binary with Nuitka (arm/v7)
 
 on:
   push:
@@ -22,17 +22,17 @@ jobs:
 
       - name: Build in container
         run: |
-          docker run --rm --platform linux/amd64 -v ${{ github.workspace }}:/src -w /src python:3.14.3 /bin/bash -c " \
+          docker run --rm --platform linux/arm/v7 -v ${{ github.workspace }}:/src -w /src python:3.14.3 /bin/bash -c " \
           apt-get update && apt-get install -y build-essential libffi-dev libzstd-dev gcc patchelf &&\
           pip install nuitka requests pyyaml pyjson zstandard setuptools && \
           python3 -m nuitka \
           --onefile \
           --standalone \
-          --output-filename=giosifier-x86_64 \
+          --output-filename=giosifier-armv7 \
           main.py"
         
       - name: Push binary
         uses: actions/upload-artifact@v4
         with:
-          name: giosifier-x86_64
-          path: giosifier-x86_64
+          name: giosifier-armv7
+          path: giosifier-armv7
