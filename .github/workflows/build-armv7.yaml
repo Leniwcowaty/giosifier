@@ -23,7 +23,7 @@ jobs:
       - name: Build in container
         run: |
           docker run --rm --platform linux/arm/v7 -v ${{ github.workspace }}:/src -w /src python:3.14.3 /bin/bash -c " \
-          apt-get update && apt-get install -y build-essential libffi-dev libzstd-dev gcc patchelf &&\
+          apt-get update && apt-get install -y build-essential gcc patchelf &&\
           pip install nuitka requests pyyaml pyjson setuptools && \
           python3 -m nuitka \
           --standalone \
