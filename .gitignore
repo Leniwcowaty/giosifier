@@ -2,7 +2,5 @@
 __pycache__/
 *.py[cod]
 
-# PyInstaller folders
+# Niutka folders
 build/
-dist/
-*.spec
