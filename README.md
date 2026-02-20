@@ -24,7 +24,7 @@ If you want to just execute the binary without the need to install dependencies 
 2. Place it somewhere on your system (preferably where you've added it to the $PATH)
 3. Run the `giosifier` binary
 
-*The binary is built with pyinstaller on Python 3.13*
+*The binary is built with Nuitka. Python 3.13.5 was used for amd64, Python 3.14.3 was used for riscv64.*
 
 ## Configuration
 The program is configured with a simple `config.yaml` file. It looks for the config file in following locations (in this order):
