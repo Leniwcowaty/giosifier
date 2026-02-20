@@ -1,14 +1,15 @@
-# Sensor station config
-# To get sensor id find your "Identyfikator stacji" via GIOS API first, eg. curl -X GET https://api.gios.gov.pl/pjp-api/v1/rest/station/findAll?page=0&size=250
-# Then for sensor_id look for "Identyfikator stanowiska" via GIOS API, eg. curl -X GET https://api.gios.gov.pl/pjp-api/v1/rest/station/sensors/{"Identyfikator stacji"}
+# config.yaml
+#
+# The program looks for config file first in ~/.config/giosifier/config.yaml, then in /etc/giosifier/config.yaml, in this order.
 #
 # Default alerts taken from: https://powietrze.gios.gov.pl/pjp/content/annual_assessment_air_acceptable_level
+station:
+  id: "20488" #Example station ID for Warsaw, Solidarności
+
 pm10:
-  sensor_id: ""
   alert: 40
 
 no2:
-  sensor_id: ""
   alert: 200
 
 # ntfy config
