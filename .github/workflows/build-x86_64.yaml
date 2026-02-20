@@ -26,13 +26,14 @@ jobs:
           apt-get update && apt-get install -y build-essential libffi-dev libzstd-dev gcc patchelf &&\
           pip install nuitka requests pyyaml pyjson zstandard setuptools && \
           python3 -m nuitka \
-          --onefile \
           --standalone \
-          --output-filename=giosifier-x86_64 \
+          --output-filename=giosifier \
           main.py"
+          mv main.dist giosifier-x86_64
+          tar -czf giosifier-x86_64.tar.gz giosifier-x86_64/
         
       - name: Push binary
         uses: actions/upload-artifact@v4
         with:
-          name: giosifier-x86_64
-          path: giosifier-x86_64
+          name: giosifier-x86_64-release
+          path: giosifier-x86_64.tar.gz

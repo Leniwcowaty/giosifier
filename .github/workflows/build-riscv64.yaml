@@ -26,13 +26,14 @@ jobs:
           apt-get update && apt-get install -y build-essential libffi-dev libzstd-dev gcc patchelf &&\
           pip install nuitka requests pyyaml pyjson zstandard setuptools && \
           python3 -m nuitka \
-          --onefile \
           --standalone \
-          --output-filename=giosifier-riscv64 \
+          --output-filename=giosifier \
           main.py"
+          mv main.dist giosifier-riscv64
+          tar -czf giosifier-riscv64.tar.gz giosifier-riscv64/
         
       - name: Push binary
         uses: actions/upload-artifact@v4
         with:
-          name: giosifier-riscv64
-          path: giosifier-riscv64
+          name: giosifier-riscv64-release
+          path: giosifier-riscv64.tar.gz
