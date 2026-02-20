@@ -34,7 +34,7 @@ def read_config():
         sys.exit(f"Config file not found in {configPath}")
 
     pm10Config = {"name": "Pył PM10", "id": config["pm10"]["sensor_id"], "alert": config["pm10"]["alert"]}
-    no2Config = {"name": "Pył PM10", "id": config["no2"]["sensor_id"], "alert": config["no2"]["alert"]}
+    no2Config = {"name": "Dwutlenek azotu (NO2)", "id": config["no2"]["sensor_id"], "alert": config["no2"]["alert"]}
     try:
         nftyConfig = {"url": config["ntfy"]["url"], "auth": config["ntfy"]["auth"]}
     except KeyError:
