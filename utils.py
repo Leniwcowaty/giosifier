@@ -10,8 +10,8 @@ except ImportError as e:
 endpointUrl = "https://api.gios.gov.pl/pjp-api/v1/rest/station/sensors/"
 
 def read_config():
-    configPathGlobal = os.path.expanduser('~/.config/giosifier/config.yaml')
-    configPathLocal = ('/etc/giosifier/config.yaml')
+    configPathLocal = os.path.expanduser('~/.config/giosifier/config.yaml')
+    configPathGlobal = ('/etc/giosifier/config.yaml')
     try:
         with open(configPathLocal, 'r') as configFile:
             config = yaml.safe_load(configFile)
