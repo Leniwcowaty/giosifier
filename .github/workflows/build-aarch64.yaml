@@ -30,7 +30,7 @@ jobs:
           --output-filename=giosifier \
           main.py"
           mv main.dist giosifier-aarch64
-          tar -czf giosifier-aaarch64.tar.gz giosifier-aarch64/
+          tar -czf giosifier-aarch64.tar.gz giosifier-aarch64/
         
       - name: Push binary
         uses: actions/upload-artifact@v4
