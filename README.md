@@ -59,3 +59,9 @@ You can either just create a cron to run this application every hour (since the 
 
 # Closing notes
 This is my hobby project, expect breakages and stuff not working correctly. It works fine for me on my RISC-V devboard. I will probably develop this in free time. Feel free to submit issues and pull requests if you want to contribute. 
+
+---
+
+# Use of LLMs
+
+I have used LLMs (Google Gemini) to restructure the code and optimize unnecessary repetition (like wrapping a few lines into a function). This is not vibe-coded, all the bad decisions and questionable coding practices are my own doing.
